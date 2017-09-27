@@ -1,0 +1,102 @@
+<div *ngIf="(nutritionFact$ | async)?.foods as nutritionFact; else loadSearchResult">
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Serving Qty</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].serving_qty }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Serving Unit</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].serving_unit }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Calories</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_calories }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Serving Unit</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].serving_unit }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Cholesterol</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].Cholesterol }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Dietary Fiber</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_dietary_fiber }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Saturated Fat</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_dietary_fiber }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Dietary Fiber</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_dietary_fiber }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Saturated Fat</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_saturated_fat }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Sodium</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_sodium }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Sugars</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].Sugars }}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <span style="font-size: 12px;">Protein</span>
+    </div>
+    <div class="col-xs-4">
+      <span style="font-size: 12px;">{{ nutritionFact[0].nf_protein }}</span>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadSearchResult>
+  <div>loading...</div>
+</ng-template>

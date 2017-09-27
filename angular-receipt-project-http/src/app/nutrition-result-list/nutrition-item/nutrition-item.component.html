@@ -1,0 +1,41 @@
+<div class="row" style="padding-top: 12px;border-bottom: 1px solid #cccccc;margin: 0 15px;">
+  <div class="col-xs-2">
+    <img *ngIf="nutrition?.photo && nutrition.photo?.thumb" 
+      [src]="nutrition.photo?.thumb" 
+      [alt]="nutrition.food_name" 
+      class="img-responsive"
+      style="max-height: 50px;">
+  </div>
+  <div class="col-xs-8">
+    <div class="row">
+      <div class="col-xs-12">{{ nutrition.food_name }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <span style="font-size: 12px;">{{ nutrition.brand_name_item_name }}</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 collapse" [ngClass]="{'in' : displayNutritionFacts}">
+        <app-nutrition-item-fact [itemId]="nutrition.nix_item_id"></app-nutrition-item-fact>
+      </div>
+      <div class="col-xs-12 text-center" style="cursor: pointer;" (click)="onClick()">
+        <span style="font-size: 10px;">show {{displayNutritionFacts? 'less' : 'more'}}</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-xs-2">
+    <div class="row">
+      <div class="col-xs-12">
+        <span style="color: #00b300">{{nutrition.nf_calories}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <span style="font-size: 12px;">Calories</span>
+      </div>
+    </div>
+  </div>
+</div>

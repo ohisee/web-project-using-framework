@@ -1,0 +1,29 @@
+<div *ngIf="results; else loadingResults">
+  <div class="row" style="border-bottom: 1px solid #cccccc;" *ngIf="results.branded && results.branded.length > 0">
+    <div class="col-xs-5 center-block" style="padding-top: 12px;">
+      <span>Branded Foods</span>
+    </div>
+  </div>
+  <div *ngIf="results.branded && results.branded.length > 0">
+    <app-nutrition-item *ngFor="let nutrition of results.branded; let i = index" 
+      [nutrition]="nutrition">
+    </app-nutrition-item>
+  </div>
+  <div class="row" style="border-bottom: 1px solid #cccccc;" *ngIf="results.common && results.common.length > 0">
+    <div class="col-xs-5 center-block" style="padding-top: 20px;">
+      <span>Common Foods</span>
+    </div>
+  </div>
+  <div *ngIf="results.common && results.common.length > 0">
+    <app-nutrition-common-item *ngFor="let nutrition of results.common"
+      [nutrition]="nutrition">
+    </app-nutrition-common-item>
+  </div>
+  <div style="padding-top: 12px;" *ngIf="!results.init && (results.branded && results.branded.length == 0)">
+    <span>Your search <em><b>{{ query | safeHtml }}</b></em> did not find any results</span>
+  </div>
+</div>
+
+<ng-template #loadingResults>
+  <div>Searching ...</div>
+</ng-template>
