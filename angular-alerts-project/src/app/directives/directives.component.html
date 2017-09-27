@@ -1,0 +1,24 @@
+<button
+	class="btn btn-primary"
+	(click)="onClickDisplayDetails()">{{ buttonNameValue }}</button>
+<p *ngIf="displayDetails; else noDetails">Secret Password = tuna</p>
+<ng-template #noDetails>
+	<p>&nbsp;</p>
+</ng-template>
+<!-- <div
+	*ngFor="let log of buttonClickLogs; let i = index">
+	<p *ngIf="i < 5; then whiteBackGround; else blueBackGround"></p>
+	<ng-template #whiteBackGround>
+		<p [ngStyle]="{backgroundColor: 'white'}">{{ log }}</p>
+	</ng-template>
+	<ng-template #blueBackGround>
+		<p
+			[ngStyle]="{backgroundColor: 'blue'}"
+			[ngClass]="{logTextColor: true}">{{ log }}</p>
+	</ng-template>
+</div> -->
+<p
+	*ngFor="let log of buttonClickLogs; let i = index"
+	[ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+	[ngClass]="{logTextColor: i >= 5}">{{ log }}
+</p>

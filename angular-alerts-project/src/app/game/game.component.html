@@ -1,0 +1,14 @@
+<app-game-control
+	(gameStarted)="onGameStarted($event)">
+</app-game-control>
+<div class="row">
+	<div class="col-xs-12">
+		<app-even
+			*ngIf="incrementCount % 2 == 0; else oddBlock"
+			[evenNumber]="incrementCount"></app-even>
+		<ng-template #oddBlock>
+			<app-odd
+				[oddNumber]="incrementCount"></app-odd>
+		</ng-template>
+	</div>
+</div>
