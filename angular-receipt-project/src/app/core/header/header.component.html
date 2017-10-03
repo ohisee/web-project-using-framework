@@ -1,0 +1,50 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<!-- class="navbar-toggle collapsed" -->
+			<!-- [attr.aria-expanded]="!menuCollapsed" -->
+			<button
+				type="button"
+				data-toggle="collapse"
+				[ngClass]="{'navbar-toggle': true, collapsed: menuCollapsed}"
+				(click)="toggleMenu()">
+				<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+			<!-- <a href="#" class="navbar-brand">Recipe Book</a> -->
+			<a [routerLink]="['/']" class="navbar-brand">Recipe Book</a>
+		</div>
+		<!-- class="collapse navbar-collapse" -->
+		<!-- [ngClass]="{'navbar-collapse': true, 'collapse': true, 'in': !menuCollapsed}" -->
+		<!-- [attr.aria-expanded]="!menuCollapsed" -->
+		<!-- [@divMenuState]="menuState" -->
+		<div
+			[ngClass]="{'navbar-collapse': true, 'collapse': divCollapse, 'collapsing': divCollapsing, 'in': divIn}">
+			<ul class="nav navbar-nav">
+				<!-- <li><a href="#" (click)="onSelect('recipe')">Receips</a></li>
+				<li><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li> -->
+				<li routerLinkActive="active" (click)="toggleMenu()"><a [routerLink]="['/recipes']">Receips</a></li>
+				<li routerLinkActive="active" (click)="toggleMenu()"><a [routerLink]="['/shopping-list']">Shopping List</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<ng-template [ngIf]="!authService.isAuthenticated()">
+					<li routerLinkActive="active" (click)="toggleMenu()"><a [routerLink]="['/signup']">Register</a></li>
+					<li routerLinkActive="active" (click)="toggleMenu()"><a [routerLink]="['/signin']">Login</a></li>
+				</ng-template>
+				<li><a style="cursor: pointer;" (click)="onSignout()" *ngIf="authService.isAuthenticated()">Logout</a></li>
+				<li class="dropdown" appDropdown *ngIf="authService.isAuthenticated()">
+					<!-- <a href="#" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a> -->
+					<a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<!-- <li><a href="#">Save Data</a></li>
+						<li><a href="#">Fetch Data</a></li> -->
+						<li><a style="cursor: pointer;" (click)="onSaveData()">Save Data</a></li>
+						<li><a style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

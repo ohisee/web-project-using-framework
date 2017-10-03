@@ -1,0 +1,37 @@
+<!-- <a
+	href="#"
+	class="list-group-item clearfix"
+	(click)="onSelected()"> -->
+<!-- <a
+	style="cursor: pointer;"
+	class="list-group-item clearfix"
+	(click)="onSelected()"> -->
+<a
+	style="cursor: pointer;"
+	class="list-group-item clearfix"
+	[routerLink]="[index]"
+	routerLinkActive="active"
+	class="list-group-item clearfix">
+	<div class="row">
+		<div class="col-xs-12">
+			<h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-9">
+			<div class="pull-left">
+				<p class="list-group-item-text">{{ recipe.description }}</p>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<span class="pull-right">
+				<!-- [src]="recipe.imagePath" as property binding OR src="{{ recipe.imagePath }}" -->
+				<img
+					[src]="recipe.imagePath"
+					alt="{{ recipe.name }}"
+					class="img-responsive"
+					style="max-height: 50px;">
+			</span>
+		</div>
+	</div>
+</a>
