@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<textarea
+				id="codingarea"
+				name="codingarea"
+				rows="8"
+				class="form-control"
+				appEditorHighlight></textarea>
+		</div>
+	</div>
+	<br>
+	<!-- <app-editor></app-editor> -->
+	<br>
+	<div class="row">
+		<div class="col-xs-12">
+			<button type="button" class="btn btn-primary" (click)="onStart()">Start</button>
+			<button
+				type="button"
+				class="btn btn-primary"
+				(click)="onClick()"
+				[disabled]="buttonDisabledForCLick">Click</button>
+		</div>
+	</div>
+</div>
