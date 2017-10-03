@@ -1,0 +1,6 @@
+<div class="row space">
+  <h2>Hello Title {{ title }}</h2>
+  <button class="btn btn-primary" type="button" id="abutton" (click)="onClick()">Example</button>
+  <input type="text" [(ngModel)]="title"/>
+  <div *ngIf="showMsg">Enabled this line</div>
+</div>
