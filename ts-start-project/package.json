@@ -1,0 +1,25 @@
+{
+  "name": "ts-start-project",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "see": "./node_modules/.bin/ts-node ./src/test.ts",
+    "play": "./node_modules/.bin/ts-node ./src/playground.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/core-js": "^0.9.43",
+    "@types/node": "^8.0.26",
+    "@types/request": "^2.0.3",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "core-js": "^2.5.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "rxjs": "^5.4.3",
+    "uuid": "^3.1.0"
+  }
+}
