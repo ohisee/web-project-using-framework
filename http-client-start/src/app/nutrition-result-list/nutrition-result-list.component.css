@@ -1,0 +1,5 @@
+.row-bordered:after {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  margin: 0 15px;
+}

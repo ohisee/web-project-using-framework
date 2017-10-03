@@ -1,0 +1,37 @@
+<div class="row" *ngIf="nutrition?.photo && nutrition.photo?.thumb; else textResults" style="padding-top: 12px;margin: 0 15px;">
+  <div class="col-xs-2">
+    <img *ngIf="nutrition?.photo && nutrition.photo?.thumb" [src]="nutrition.photo?.thumb" [alt]="nutrition.food_name" class="img-responsive center-block"
+      style="max-height: 50px;">
+  </div>
+  <div class="col-xs-8">
+    <div class="row">
+      <div class="col-xs-12">
+        <span style="font-size: 15px; padding-top: 2px;">{{ nutrition.food_name }}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <span style="font-size: 12px;">{{ nutrition.serving_unit }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #textResults>
+  <div class="row" style="padding-top: 12px;margin: 0 15px;">
+    <div class="col-xs-2">
+      <img src="../../../assets/food-pyramid.jpg" [alt]="nutrition.food_name" class="img-responsive center-block" style="max-height: 50px;">
+    </div>
+    <div class="col-xs-10">
+      <div class="row">
+        <div class="col-xs-12">
+          <span style="font-size: 15px; padding-top: 2px;">{{ nutrition.food_name }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <span style="font-size: 12px;">{{ nutrition.serving_unit }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

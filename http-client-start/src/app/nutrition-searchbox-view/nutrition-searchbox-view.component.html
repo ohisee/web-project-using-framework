@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-7 col-lg-7">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." #foodqueryInput>
+      <span class="input-group-addon" (click)="onClick(foodqueryInput.value)"><i class="glyphicon glyphicon-search bg"></i></span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-7 col-lg-7">
+    <app-nutrition-result-list [results]="results$ | async" [query]="foodqueryInput.value"></app-nutrition-result-list>
+  </div>
+</div>
